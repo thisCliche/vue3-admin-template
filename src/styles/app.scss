@@ -1,0 +1,107 @@
+/* 基本样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: 1366px;
+  height: 100%;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  background-color: var(--ba-bg-color);
+  font-size: 14px;
+  overflow-x: auto;
+  position: relative;
+}
+
+.w100 {
+  width: 100% !important;
+}
+.h100 {
+  height: 100% !important;
+}
+.ba-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.default-main {
+  margin: var(--ba-main-space) var(--ba-main-space) 60px var(--ba-main-space);
+}
+.zoom-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: -10px;
+  right: -10px;
+  cursor: se-resize;
+}
+.block-help {
+  display: block;
+  width: 100%;
+  color: #909399;
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 5px;
+}
+
+/* 鼠标置入浮动效果-s */
+.suspension {
+  transition: all 0.3s ease;
+}
+.suspension:hover {
+  -webkit-transform: translateY(-4px) scale(1.02);
+  -moz-transform: translateY(-4px) scale(1.02);
+  -ms-transform: translateY(-4px) scale(1.02);
+  -o-transform: translateY(-4px) scale(1.02);
+  transform: translateY(-4px) scale(1.02);
+  -webkit-box-shadow: 0 14px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  border-radius: 6px;
+}
+/* 鼠标置入浮动效果-e */
+
+/* 页面切换动画-s */
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active {
+  will-change: transform;
+  transition: all 0.3s ease;
+}
+// slide-right
+.slide-right-enter-from {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+.slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+// slide-left
+.slide-left-enter-from {
+  @extend .slide-right-leave-to;
+}
+.slide-left-leave-to {
+  @extend .slide-right-enter-from;
+}
+/* 页面切换动画-e */
+
+/* 暗黑模式公共样式-s */
+.ba-icon-dark {
+  color: var(--el-text-color-primary) !important;
+}
+/* 暗黑模式公共样式-e */
+

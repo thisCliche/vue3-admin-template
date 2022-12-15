@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript">
+      (function(window) {
+        var theUA = window.navigator.userAgent.toLowerCase();
+        if (theUA.indexOf('trident') > -1 ) {
+            var str = "您的浏览器版本不受支持，请及时更新";
+            var str2 = "推荐使用：谷歌，若使用双核浏览器请切换急速模式，具体切换方法如下图";
+            document.writeln("<div style='text-align:center;color:#333; height:100%;border:0;position:fixed;top:200px;left:0;width:100%;'><h2>"+str+"</h2><h2>"+str2+"</h2><div style='width:311px;height:227px;background:url(./tip.png);margin:0 auto;'></div></div>");
+            document.execCommand("Stop");
+          }
+      })(window);
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading...</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
