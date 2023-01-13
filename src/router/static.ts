@@ -87,7 +87,7 @@ const dynamicBaseRoute:RouteRecordRaw = {
             {
               path:'/admin/user/userInfo',
               name:'userInfo',
-              component:()=>import('@/views/user/userInfo.vue'),
+              component:()=>import('@/views/user/userInfo.tsx'),
               meta:{
                 title:'用户信息',
                 extend:'none',
@@ -135,7 +135,7 @@ const dynamicBaseRoute:RouteRecordRaw = {
             {
               path:'/admin/object/objectManage',
               name:'objectManage',
-              component:()=>import('@/views/object/objectManage.vue'),
+              component:()=>import('@/views/object/objectManage.tsx'),
               meta:{
                 title:'项目信息',
                 extend:'none',

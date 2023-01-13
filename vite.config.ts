@@ -1,6 +1,7 @@
 import type { UserConfig, ConfigEnv } from 'vite'
 import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import { loadEnv } from './src/utils/vite'
 import { svgBuilder } from './src/components/icon/svg/index'
 
@@ -15,7 +16,7 @@ const viteConfig = ({ mode }: ConfigEnv): UserConfig => {
     assets: pathResolve('./src/assets')
   }
   return {
-    plugins: [vue(), svgBuilder('./src/assets/icons/')],
+    plugins: [vue(),vueJsx(), svgBuilder('./src/assets/icons/')],
     root: process.cwd(),
     define: { 'process.env': process.env },
     resolve: { alias },
@@ -41,22 +42,25 @@ const viteConfig = ({ mode }: ConfigEnv): UserConfig => {
           },
       },
   },
-    // css: {
-    //   postcss: {
-    //     plugins: [
-    //       {
-    //         postcssPlugin: 'internal:charset-removal',
-    //         AtRule: {
-    //           charset: (atRule) => {
-    //             if (atRule.name === 'charset') {
-    //               atRule.remove()
-    //             }
-    //           },
-    //         },
-    //       },
-    //     ],
-    //   },
-    // },
+    css: {
+      modules:{
+        localsConvention:'camelCase'
+      }
+      // postcss: {
+      //   plugins: [
+      //     {
+      //       postcssPlugin: 'internal:charset-removal',
+      //       AtRule: {
+      //         charset: (atRule) => {
+      //           if (atRule.name === 'charset') {
+      //             atRule.remove()
+      //           }
+      //         },
+      //       },
+      //     },
+      //   ],
+      // },
+    },
   }
 }
 export default viteConfig
